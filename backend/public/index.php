@@ -1,5 +1,5 @@
 <?php
-    require '../index.php';
+    require '../init.php';
     use App\Controllers\HomeController;
 
     $c = new HomeController();

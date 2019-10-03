@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>HEllo WOrld <?= $nama ?></h1>
+    <?php $this->Component('header',['nama'=>'bishma']); ?>
+    <h1>HEllo WOrld </h1>
+    <?php print_r($data) ?>
 </body>
 </html>

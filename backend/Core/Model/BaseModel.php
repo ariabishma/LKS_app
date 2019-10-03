@@ -14,6 +14,8 @@ class BaseModel{
         $this->conn = new \mysqli("localhost","root","","lks");
     }
 
+
+    // read
     public function all()
     {
         $this->temp_query .= "SELECT * FROM ".$this->table;
@@ -49,10 +51,34 @@ class BaseModel{
         return $q;
      
     }
+
+
+
+    // create
+    public function Create($data)
+    {
+        
+        $k = "";
+        $v = "";
+
+        foreach ($data as $key => $value) {
+            $k .= $key.",";    
+            $v .= '"'.$value.'",';    
+        }
+        
+        $k = rtrim($k,",");
+        $v = rtrim($v,",");
+
+
+        $int_temp_query = "INSERT INTO ".$this->table." (".$k.") VALUES (".$v.")";
+
+        return mysqli_query($this->conn,$int_temp_query);
+        
+    }
     
 
 
-    // development purpose
+    // Development Purpose
     public function dump()
     {
         return $this->temp_query;
