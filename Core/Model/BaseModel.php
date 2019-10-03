@@ -43,12 +43,16 @@ class BaseModel{
 
     public function get()
     {
+        $res = [];
         // echo $this->temp_query;
-        $q = mysqli_fetch_all(mysqli_query($this->conn,$this->temp_query));
+        $q = mysqli_query($this->conn,$this->temp_query);
+        while($r = mysqli_fetch_array($q)){
+            $res[] = $r;
+        }
         $this->temp_query = "";
         $this->where = false;
-
-        return $q;
+        
+        return   $res;
      
     }
 
