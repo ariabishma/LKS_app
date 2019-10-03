@@ -5,7 +5,7 @@ class BaseController {
 
     private $data;
 
-    public function view($file,$data)
+    public function view($file,$data=[])
     {
         $this->data = $data;
 
