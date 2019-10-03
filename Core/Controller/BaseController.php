@@ -17,8 +17,12 @@ class BaseController {
         eval('?>'.$file);
     }
 
-    public function Component($component)
-    {
+    public function Component($component,$data=[])
+    {   
+        foreach ($data as $key => $value){
+            ${$key} = $value;
+        }
+
         foreach ($this->data as $key => $value) {
             ${$key} = $value;
         }
