@@ -1,1 +1,2 @@
 # latihanLKS
+Minimum MVC Framework
