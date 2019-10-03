@@ -22,7 +22,7 @@ class BaseModel{
         $this->temp_query .= $q;  
         return $this;
     }
-    
+
     public function all()
     {
         $this->temp_query .= "SELECT * FROM ".$this->table;
@@ -43,7 +43,7 @@ class BaseModel{
             $this->where = true;
         }else{
 
-            $this->temp_query .= " AND ".$key." = ".$val;
+            $this->temp_query .= " AND ".$key." =  \"".$val."\" ";
         }
         return $this;
     }
@@ -87,6 +87,15 @@ class BaseModel{
         
     }
     
+
+    // delete
+    public function destroy($id)
+    {
+        $q = "DELETE FROM ".$this->table." WHERE ".$this->primary_key." = ".$id;
+        return mysqli_query($this->conn,$q);
+        
+    }
+
 
 
     // Development Purpose
