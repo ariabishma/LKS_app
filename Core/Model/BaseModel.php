@@ -16,6 +16,13 @@ class BaseModel{
 
 
     // read
+
+    public function custom($q)
+    {
+        $this->temp_query .= $q;  
+        return $this;
+    }
+    
     public function all()
     {
         $this->temp_query .= "SELECT * FROM ".$this->table;
