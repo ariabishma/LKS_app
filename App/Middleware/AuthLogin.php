@@ -6,6 +6,7 @@ class AuthLogin{
     {
         if(!isLogin()){
             header('location:./login.php');
+            exit('.');
         }
 
         return true;
