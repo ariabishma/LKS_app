@@ -3,4 +3,4 @@
     use App\Controllers\Auth\AuthenticateUser;
 
     $c = new AuthenticateUser();
-    $c->loginAction();
+    $c->registerAction();

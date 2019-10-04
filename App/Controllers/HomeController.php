@@ -8,7 +8,7 @@ class HomeController extends BaseController{
    
     public function __construct()
     {
-        $this->Middleware('\App\Middleware\Authenticate','bishma');
+        
         // $this->Middleware('\App\Middleware\Authenticate','pengguna');
     } 
 

@@ -7,6 +7,15 @@ function isLogin()
     }
     return 1;
 }
+
+
+
+function bcrypt($pass)
+{
+    return password_hash($pass,PASSWORD_BCRYPT);
+}
+
+
 define('BASE_DIR',__DIR__);
 define('PUBLIC_DIR',__DIR__."/public/");
 
