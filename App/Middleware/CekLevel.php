@@ -1,14 +1,11 @@
 <?php
 namespace App\Middleware;
 use App\User;
-class CekLevel{
+use App\Middleware\Helper\Auth;
 
-    public static function LoginUser()
-    {
-        $u = new User();
-        $data = $u->find($_SESSION['id'])->get();
-        return $data[0];
-    }
+class CekLevel{
+    use Auth;
+ 
     
     public static function Run($param='user',$act=0)
     {

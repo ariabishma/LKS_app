@@ -23,7 +23,7 @@
 
             <?php if(isLogin()): ?>
                 <a href="./add.php"><li class="nav-link">Add Book</li></a>
-                 <a href="./action/logout.php"><li class="nav-link">Logout</li></a>
+                 <a href="./action/logout.php"><li class="nav-link">Logout (<?= loginUser()['username'] ?>)</li></a>
             <?php endif; ?>
 
             <?php if(!isLogin()): ?>

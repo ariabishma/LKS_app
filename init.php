@@ -8,7 +8,12 @@ function isLogin()
     return 1;
 }
 
-
+ function LoginUser()
+{
+    $u = new App\User();
+    $data = $u->find($_SESSION['id'])->get();
+    return $data[0];
+}
 
 function bcrypt($pass)
 {
